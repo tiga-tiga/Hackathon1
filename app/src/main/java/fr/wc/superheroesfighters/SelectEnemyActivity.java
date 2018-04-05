@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -60,6 +61,7 @@ public class SelectEnemyActivity extends AppCompatActivity {
                                 int dur = powerStat.getInt("durability");
                                 int powr = powerStat.getInt("power");
                                 int cmbt = powerStat.getInt("combat");
+
                             }
 
                         } catch (JSONException e) {
