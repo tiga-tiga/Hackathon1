@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,7 +63,11 @@ public class SelectEnemyActivity extends AppCompatActivity {
                                 int powr = powerStat.getInt("power");
                                 int cmbt = powerStat.getInt("combat");
 
+                                enemy.add(new SelectEnemyModel(imageHero, nom));
                             }
+
+                            SelectEnemyAdapter adapter = new SelectEnemyAdapter(SelectEnemyActivity.this, enemy);
+                            gridViewEnemy.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -82,7 +87,6 @@ public class SelectEnemyActivity extends AppCompatActivity {
         // On ajoute la requête à la file d'attente
         requestQueue.add(jsonObjectRequest);
 
-        SelectEnemyAdapter adapter = new SelectEnemyAdapter(this, enemy);
-        gridViewEnemy.setAdapter(adapter);
+
     }
 }

@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 /**
@@ -30,7 +32,8 @@ public class SelectEnemyAdapter extends ArrayAdapter<SelectEnemyModel> {
         ImageView imgEnemy = (ImageView) convertView.findViewById(R.id.image_enemy);
         TextView nameEnemy = (TextView) convertView.findViewById(R.id.name_enemy);
 
-        imgEnemy.setImageResource(enemy.getImageEnemy());
+
+        Glide.with(getContext()).load(enemy.getImageHero()) .into(imgEnemy);
         nameEnemy.setText(enemy.getNameEnemy());
 
         return convertView;

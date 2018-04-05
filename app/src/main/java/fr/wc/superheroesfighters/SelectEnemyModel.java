@@ -8,7 +8,7 @@ import android.os.Parcelable;
  */
 
 public class SelectEnemyModel implements Parcelable{
-    private int imageEnemy;
+    private String imageEnemy;
     private String nameEnemy;
 
     private int intell;
@@ -42,11 +42,11 @@ public class SelectEnemyModel implements Parcelable{
         }
     };
 
-    public int getImageEnemy() {
+    public String getImageEnemy() {
         return imageEnemy;
     }
 
-    public void setImageEnemy(int imageEnemy) {
+    public void setImageEnemy(String imageEnemy) {
         this.imageEnemy = imageEnemy;
     }
 
@@ -114,8 +114,8 @@ public class SelectEnemyModel implements Parcelable{
         this.imageHero = imageHero;
     }
 
-    public SelectEnemyModel(int imageEnemy, String nameEnemy) {
-        this.imageEnemy = imageEnemy;
+    public SelectEnemyModel(String imageHero, String nameEnemy) {
+        this.imageHero= imageHero;
         this.nameEnemy = nameEnemy;
 
     }
