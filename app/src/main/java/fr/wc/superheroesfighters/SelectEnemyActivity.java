@@ -1,9 +1,12 @@
 package fr.wc.superheroesfighters;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
@@ -13,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,7 +66,11 @@ public class SelectEnemyActivity extends AppCompatActivity {
                                 int powr = powerStat.getInt("power");
                                 int cmbt = powerStat.getInt("combat");
 
+                                enemy.add(new SelectEnemyModel(imageHero, nom, intell, force, speed, dur, powr, cmbt));
                             }
+
+                            SelectEnemyAdapter adapter = new SelectEnemyAdapter(SelectEnemyActivity.this, enemy);
+                            gridViewEnemy.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -82,7 +90,17 @@ public class SelectEnemyActivity extends AppCompatActivity {
         // On ajoute la requête à la file d'attente
         requestQueue.add(jsonObjectRequest);
 
-        SelectEnemyAdapter adapter = new SelectEnemyAdapter(this, enemy);
-        gridViewEnemy.setAdapter(adapter);
+        gridViewEnemy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                SelectEnemyModel monstre = enemy.get(i);
+                Intent goCombat = new Intent(SelectEnemyActivity.this, Combat.class);
+                goCombat.putExtra("TIMBRE", monstre);
+                startActivity(goCombat);
+            }
+        });
+
+
     }
 }
