@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SuperHeroesFighters</string>
+    <string name="enemy">Enemy</string>
 </resources>
