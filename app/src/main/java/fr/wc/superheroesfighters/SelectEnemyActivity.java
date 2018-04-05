@@ -1,9 +1,12 @@
 package fr.wc.superheroesfighters;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
@@ -86,6 +89,14 @@ public class SelectEnemyActivity extends AppCompatActivity {
 
         // On ajoute la requête à la file d'attente
         requestQueue.add(jsonObjectRequest);
+
+        gridViewEnemy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent goCombat = new Intent(SelectEnemyActivity.this, Combat.class);
+                startActivity(goCombat);
+            }
+        });
 
 
     }
