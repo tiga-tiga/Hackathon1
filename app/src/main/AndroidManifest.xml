@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectEnemyActivity"></activity>
+        <activity android:name=".SelectEnemyActivity" />
+        <activity android:name=".Combat"></activity>
     </application>
 
 </manifest>
