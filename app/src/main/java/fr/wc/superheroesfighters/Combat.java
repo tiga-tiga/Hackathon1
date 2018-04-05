@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 public class Combat extends AppCompatActivity {
 
     @Override
@@ -24,6 +26,11 @@ public class Combat extends AppCompatActivity {
         ImageView heroMentAttack = findViewById(R.id.hero_mental_attack);
         ImageView heroSpecialAttack = findViewById(R.id.hero_special_attack);
         ImageView enemySpecialAttack = findViewById(R.id.enemy_special_attack);
+
+        SelectEnemyModel monstre = getIntent().getExtras().getParcelable("TIMBRE");
+
+        Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(enemyPortrait);
+
 
         heroPhyAttack.setOnClickListener(new View.OnClickListener() {
             @Override

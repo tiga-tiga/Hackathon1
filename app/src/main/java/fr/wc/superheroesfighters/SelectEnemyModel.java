@@ -8,18 +8,18 @@ import android.os.Parcelable;
  */
 
 public class SelectEnemyModel implements Parcelable{
+
     private String imageEnemy;
     private String nameEnemy;
-
     private int intell;
     private int force;
     private int speed;
     private int dur;
     private int powr;
     private int cmbt;
-    private String imageHero;
 
     protected SelectEnemyModel(Parcel in) {
+        imageEnemy = in.readString();
         nameEnemy = in.readString();
         intell = in.readInt();
         force = in.readInt();
@@ -27,7 +27,23 @@ public class SelectEnemyModel implements Parcelable{
         dur = in.readInt();
         powr = in.readInt();
         cmbt = in.readInt();
-        imageHero = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(imageEnemy);
+        dest.writeString(nameEnemy);
+        dest.writeInt(intell);
+        dest.writeInt(force);
+        dest.writeInt(speed);
+        dest.writeInt(dur);
+        dest.writeInt(powr);
+        dest.writeInt(cmbt);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<SelectEnemyModel> CREATOR = new Creator<SelectEnemyModel>() {
@@ -106,45 +122,18 @@ public class SelectEnemyModel implements Parcelable{
         this.cmbt = cmbt;
     }
 
-    public String getImageHero() {
-        return imageHero;
-    }
+    public SelectEnemyModel(String imageEnemy, String nameEnemy, int intell, int force, int speed, int dur, int powr, int cmbt) {
 
-    public void setImageHero(String imageHero) {
-        this.imageHero = imageHero;
-    }
-
-    public SelectEnemyModel(String imageHero, String nameEnemy) {
-        this.imageHero= imageHero;
+        this.imageEnemy = imageEnemy;
         this.nameEnemy = nameEnemy;
-
-    }
-
-    public SelectEnemyModel(int intell, int force, int speed, int dur, int powr, int cmbt, String imageHero) {
-
         this.intell = intell;
         this.force = force;
         this.speed = speed;
         this.dur = dur;
         this.powr = powr;
         this.cmbt = cmbt;
-        this.imageHero = imageHero;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(nameEnemy);
-        dest.writeInt(intell);
-        dest.writeInt(force);
-        dest.writeInt(speed);
-        dest.writeInt(dur);
-        dest.writeInt(powr);
-        dest.writeInt(cmbt);
-        dest.writeString(imageHero);
-    }
+
 }

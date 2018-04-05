@@ -33,7 +33,7 @@ public class SelectEnemyAdapter extends ArrayAdapter<SelectEnemyModel> {
         TextView nameEnemy = (TextView) convertView.findViewById(R.id.name_enemy);
 
 
-        Glide.with(getContext()).load(enemy.getImageHero()) .into(imgEnemy);
+        Glide.with(getContext()).load(enemy.getImageEnemy()) .into(imgEnemy);
         nameEnemy.setText(enemy.getNameEnemy());
 
         return convertView;

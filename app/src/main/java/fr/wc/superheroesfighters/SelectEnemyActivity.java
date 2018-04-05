@@ -66,7 +66,7 @@ public class SelectEnemyActivity extends AppCompatActivity {
                                 int powr = powerStat.getInt("power");
                                 int cmbt = powerStat.getInt("combat");
 
-                                enemy.add(new SelectEnemyModel(imageHero, nom));
+                                enemy.add(new SelectEnemyModel(imageHero, nom, intell, force, speed, dur, powr, cmbt));
                             }
 
                             SelectEnemyAdapter adapter = new SelectEnemyAdapter(SelectEnemyActivity.this, enemy);
@@ -93,7 +93,10 @@ public class SelectEnemyActivity extends AppCompatActivity {
         gridViewEnemy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                SelectEnemyModel monstre = enemy.get(i);
                 Intent goCombat = new Intent(SelectEnemyActivity.this, Combat.class);
+                goCombat.putExtra("TIMBRE", monstre);
                 startActivity(goCombat);
             }
         });
