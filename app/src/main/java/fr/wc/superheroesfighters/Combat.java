@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Combat extends AppCompatActivity {
@@ -15,38 +16,35 @@ public class Combat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_combat);
 
-        Intent board = getIntent();
+        ImageView enemyPortrait = findViewById(R.id.enemy_view);
+        ImageView heroPortrait = findViewById(R.id.hero_view);
+        ImageView heroPhyAttack = findViewById(R.id.hero_physic_attack);
+        ImageView enemyPhyAttack = findViewById(R.id.enemy_physic_attack);
+        ImageView enemyMentAttack = findViewById(R.id.enemy_mental_attack);
+        ImageView heroMentAttack = findViewById(R.id.hero_mental_attack);
+        ImageView heroSpecialAttack = findViewById(R.id.hero_special_attack);
+        ImageView enemySpecialAttack = findViewById(R.id.enemy_special_attack);
 
-        final MonsterModel fighters = board.getParcelableExtra("fighters");
-
-
-
-        fighter1.setOnClickListener(new View.OnClickListener() {
+        heroPhyAttack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                monster.takeHit1();
-                boom2.setVisibility(View.VISIBLE);
-                boom1.setVisibility(View.GONE);
-                monster2Life.setText(String.valueOf(monster.getLife2()));
-                if(monster.isKO2()){
-                    winner.setImageResource(R.drawable.firesaur);
-                    winner.setVisibility(View.VISIBLE);
-                    fighter1.setClickable(false);
-                    fighter2.setClickable(false);
-                    button.setVisibility(View.VISIBLE);
-                    tvBlink2.setVisibility(View.VISIBLE);
+            public void onClick(View view) {
 
-                    tvBlink2.setText(monster.getNameMonster1() + "WIN'S!!!");
-                    //on paramètre l'animation
-                    Animation anim = new AlphaAnimation(0.0f, 1.0f);
-                    anim.setDuration(1000); //c'est le paramètre qui permet de paramètrer la fréquence du clignot
-                    anim.setStartOffset(10);//temps qu'il reste invisible
-                    anim.setRepeatMode(Animation.REVERSE);
-                    anim.setRepeatCount(Animation.INFINITE);
-                    tvBlink2.startAnimation(anim);
-                    Toast.makeText(BattleActivity.this, monster.getNameMonster2() + " is KO", Toast.LENGTH_SHORT).show();
-                }
             }
         });
+
+        heroMentAttack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        heroSpecialAttack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 }
