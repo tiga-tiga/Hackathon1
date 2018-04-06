@@ -1,6 +1,7 @@
 package fr.wc.superheroesfighters;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class SelectEnemyActivity extends AppCompatActivity {
         final int combatH = courier.getCombat();
         final int speedH = courier.getSpeed();
         final int powerH = courier.getPower();
+        final Bitmap photo = courier.getImage();
 
 
         final GridView gridViewEnemy = findViewById(R.id.grid_view_enemy);
@@ -105,7 +107,7 @@ public class SelectEnemyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 SelectEnemyModel monstre = enemy.get(i);
-                HeroStats statsF = new HeroStats(nameH, forceH, intellH, durabilityH, combatH, speedH, powerH);
+                HeroStats statsF = new HeroStats(nameH, forceH, intellH, durabilityH, combatH, speedH, powerH, photo);
                 Intent goCombat = new Intent(SelectEnemyActivity.this, Combat.class);
                 goCombat.putExtra("TIMBRE", monstre);
                 goCombat.putExtra("GUERE", statsF);
