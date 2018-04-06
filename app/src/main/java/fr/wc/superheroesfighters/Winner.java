@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class Winner extends AppCompatActivity {
 
     @Override
@@ -13,12 +15,5 @@ public class Winner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
 
-        Intent intent = getIntent();
-
-        ImageView ivWinner = findViewById(R.id.image_winner);
-        ImageView ivLoser = findViewById(R.id.image_loser);
-        TextView tvWin = findViewById(R.id.text_winner);
-        TextView tvLose = findViewById(R.id.text_loser);
-        TextView tvWinnerName = findViewById(R.id.text_name);
     }
 }
