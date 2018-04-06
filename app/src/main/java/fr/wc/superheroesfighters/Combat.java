@@ -40,6 +40,9 @@ public class Combat extends AppCompatActivity {
         final SelectEnemyModel monstre = getIntent().getExtras().getParcelable("TIMBRE");
         final HeroStats courier = getIntent().getExtras().getParcelable("GUERE");
 
+        //photo joueur
+        heroPortrait.setImageBitmap(courier.getImage());
+
         Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(enemyPortrait);
 
         lifeEnemy = ( 10 + monstre.getDur() + monstre.getPowr());
