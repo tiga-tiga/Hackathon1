@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,33 +33,33 @@ public class HeroCreation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hero_creation);
 
-        Button forceMoins = findViewById(R.id.force_moins);
+        ImageView forceMoins = findViewById(R.id.force_moins);
         final TextView force = findViewById(R.id.force);
-        Button forcePlus = findViewById(R.id.force_plus);
+        ImageView forcePlus = findViewById(R.id.force_plus);
 
-        Button intellMoins = findViewById(R.id.intell_moins);
+        ImageView intellMoins = findViewById(R.id.intell_moins);
         final TextView intell = findViewById(R.id.intell);
-        Button intellPlus = findViewById(R.id.intell_plus);
+        ImageView intellPlus = findViewById(R.id.intell_plus);
 
-        Button  durabilityPlus = findViewById(R.id.durability_plus);
+        ImageView  durabilityPlus = findViewById(R.id.durability_plus);
         final TextView durability = findViewById(R.id.durability);
-        Button durabilityMoins = findViewById(R.id.durability_moins);
+        ImageView durabilityMoins = findViewById(R.id.durability_moins);
 
-        Button combatMoins = findViewById(R.id.combat_moins);
+        ImageView combatMoins = findViewById(R.id.combat_moins);
         final TextView combat = findViewById(R.id.combat);
-        Button combatPlus = findViewById(R.id.combat_plus);
+        ImageView combatPlus = findViewById(R.id.combat_plus);
 
-        Button speedMoins = findViewById(R.id.speed_moins);
+        ImageView speedMoins = findViewById(R.id.speed_moins);
         final TextView speed = findViewById(R.id.speed);
-        Button speedPlus = findViewById(R.id.speed_plus);
+        ImageView speedPlus = findViewById(R.id.speed_plus);
 
-        Button powerMoins = findViewById(R.id.power_moins);
+        ImageView powerMoins = findViewById(R.id.power_moins);
         final TextView power = findViewById(R.id.power);
-        Button powerPlus = findViewById(R.id.power_plus);
+        ImageView powerPlus = findViewById(R.id.power_plus);
 
         final TextView capital = findViewById(R.id.pts_left);
 
-        Button goSelectEnemy = findViewById(R.id.go_fight);
+        ImageView goSelectEnemy = findViewById(R.id.go_fight);
 
         final EditText yourName = findViewById(R.id.name_hero);
 
