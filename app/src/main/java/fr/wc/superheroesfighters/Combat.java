@@ -34,10 +34,12 @@ public class Combat extends AppCompatActivity {
         final TextView enemyLifeBar = findViewById(R.id.enemy_life_bar);
 
         final SelectEnemyModel monstre = getIntent().getExtras().getParcelable("TIMBRE");
+        final HeroStats courier = getIntent().getExtras().getParcelable("GUERE");
 
         Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(enemyPortrait);
 
         lifeEnemy = ( 10 + monstre.getDur() + monstre.getPowr());
+        heroLife = (50 + courier.getDurability() + courier.getPower());
 
         enemyLifeBar.setText(String.valueOf(lifeEnemy));
         heroLifeBar.setText(String.valueOf(heroLife));
@@ -46,18 +48,41 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                lifeEnemy = lifeEnemy - monstre.getPowr();
-                if (lifeEnemy < 0) {
+                int calculHp = 1;
+                calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
+
+                if (calculHp<0) {
+                    calculHp=0;
+                }
+
+                lifeEnemy = lifeEnemy - (calculHp);
+
+                if (lifeEnemy<0){
                     lifeEnemy = 0;
                 }
-                enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
             }
         });
 
         heroMentAttack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                int calculHe = 1;
+                calculHe = (((courier.getIntelligence())+(courier.getCombat())-(monstre.getIntell())));
+
+                if (calculHe<0) {
+                    calculHe=0;
+                }
+
+                lifeEnemy = lifeEnemy - (calculHe);
+
+                if (lifeEnemy<0){
+                    lifeEnemy = 0;
+                }
+
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
             }
         });
@@ -66,8 +91,25 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                int calculHs = 1;
+                calculHs = (((courier.getCombat())+(courier.getForce())-(monstre.getDur())));
+
+                if (calculHs<0) {
+                    calculHs=0;
+                }
+
+                lifeEnemy = lifeEnemy - (calculHs);
+
+                if (lifeEnemy<0){
+                    lifeEnemy = 0;
+                }
+
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
+
             }
         });
+
+
 
     }
 }
