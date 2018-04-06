@@ -4,53 +4,39 @@
     android:id="@+id/toast_layout_root"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="450dp"
     android:padding="10dp"
-    android:background="#DAAA">
+    android:background="#ddb7aeae">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/toast_layout_enemy"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="10dp"
-        android:background="#DAAA">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/image_enemy"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:id="@+id/text_ememy"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:textColor="#FFF" />
-
-        </LinearLayout>
-
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/toast_layout_hero"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="10dp"
-        android:background="#DAAA">
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:textColor="#FFF" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
 
-        </LinearLayout>
 
     </LinearLayout>
