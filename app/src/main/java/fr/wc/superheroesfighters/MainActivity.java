@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
                 bouton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent bou = new Intent(MainActivity.this, SelectEnemyActivity.class);
+                        Intent bou = new Intent(MainActivity.this, HeroCreation.class);
                         startActivity(bou);
                     }
                 });

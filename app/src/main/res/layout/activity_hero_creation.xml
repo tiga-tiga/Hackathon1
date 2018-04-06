@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fr.wc.superheroesfighters.HeroCreation">
+
+    <EditText
+        android:id="@+id/name_hero"
+        android:layout_margin= "4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"/>
+
+    <LinearLayout
+        android:id="@+id/forceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/force_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/force"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/force_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Force"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/intellLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/intell_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/intell"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/intell_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intelligence"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/durabilityLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/durability_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/durability"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/durability_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durability"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/combatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/combat_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/combat"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/combat_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="combat"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/speedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/speed_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/speed_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vitesse"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/powerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/power_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/power"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/power_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:text="+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="power"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pts_restant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Points restant: "
+            />
+
+        <TextView
+            android:id="@+id/pts_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="300"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/go_fight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fight !"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

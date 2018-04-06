@@ -7,11 +7,15 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 public class Combat extends AppCompatActivity {
+
+    int heroLife = 100;
+    int lifeEnemy= 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +30,27 @@ public class Combat extends AppCompatActivity {
         ImageView heroMentAttack = findViewById(R.id.hero_mental_attack);
         ImageView heroSpecialAttack = findViewById(R.id.hero_special_attack);
         ImageView enemySpecialAttack = findViewById(R.id.enemy_special_attack);
+        TextView heroLifeBar = findViewById(R.id.heo_life_bar);
+        final TextView enemyLifeBar = findViewById(R.id.enemy_life_bar);
 
-        SelectEnemyModel monstre = getIntent().getExtras().getParcelable("TIMBRE");
+        final SelectEnemyModel monstre = getIntent().getExtras().getParcelable("TIMBRE");
 
         Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(enemyPortrait);
 
+        lifeEnemy = ( 10 + monstre.getDur() + monstre.getPowr());
+
+        enemyLifeBar.setText(String.valueOf(lifeEnemy));
+        heroLifeBar.setText(String.valueOf(heroLife));
 
         heroPhyAttack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                lifeEnemy = lifeEnemy - monstre.getPowr();
+                if (lifeEnemy < 0) {
+                    lifeEnemy = 0;
+                }
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
             }
         });

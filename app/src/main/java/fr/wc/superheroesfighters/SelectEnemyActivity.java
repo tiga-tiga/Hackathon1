@@ -33,6 +33,16 @@ public class SelectEnemyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_enemy);
 
+        HeroStats courier = getIntent().getExtras().getParcelable("GUERRE");
+        final String nameH = courier.getName();
+        final int forceH = courier.getForce();
+        final int intellH = courier.getIntelligence();
+        final int durabilityH = courier.getDurability();
+        final int combatH = courier.getCombat();
+        final int speedH = courier.getSpeed();
+        final int powerH = courier.getPower();
+
+
         final GridView gridViewEnemy = findViewById(R.id.grid_view_enemy);
         final ArrayList<SelectEnemyModel> enemy = new ArrayList<>();
 
@@ -95,8 +105,10 @@ public class SelectEnemyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 SelectEnemyModel monstre = enemy.get(i);
+                HeroStats statsF = new HeroStats(nameH, forceH, intellH, durabilityH, combatH, speedH, powerH);
                 Intent goCombat = new Intent(SelectEnemyActivity.this, Combat.class);
                 goCombat.putExtra("TIMBRE", monstre);
+                goCombat.putExtra("GUERE", statsF);
                 startActivity(goCombat);
             }
         });

@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectEnemyActivity" />
-        <activity android:name=".Combat"></activity>
+        <activity android:name=".Combat" />
+        <activity android:name=".HeroCreation"></activity>
     </application>
 
 </manifest>
