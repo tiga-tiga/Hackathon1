@@ -74,9 +74,13 @@ public class Combat extends AppCompatActivity {
                 heroLife = heroLife - (calculEp);
 
                 if (lifeEnemy < 0) {
+                    Intent victoire = new Intent(Combat.this, Winner.class);
+
                 }
 
                 if (heroLife < 0) {
+                    Intent loser = new Intent(Combat.this, Loser.this);
+
 
                 }
 
