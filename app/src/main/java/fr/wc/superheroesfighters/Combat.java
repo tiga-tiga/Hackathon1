@@ -73,8 +73,15 @@ public class Combat extends AppCompatActivity {
                 lifeEnemy = lifeEnemy - (calculHp);
                 heroLife = heroLife - (calculEp);
 
-                enemyLifeBar.setText(String.valueOf(lifeEnemy));
+                if (lifeEnemy < 0) {
+                }
 
+                if (heroLife < 0) {
+
+                }
+
+                heroLifeBar.setText(String.valueOf(heroLife));
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
                 // toast de résultats
                 LayoutInflater inflater = getLayoutInflater();
@@ -105,10 +112,10 @@ public class Combat extends AppCompatActivity {
             public void onClick(View view) {
 
                 int calculHp = 1;
-                calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
+                calculHp = (((courier.getIntelligence())+(courier.getSpeed())-(monstre.getDur())));
 
                 int calculEp = 1;
-                calculEp = (((monstre.getPowr())+(monstre.getForce())-(courier.getDurability())));
+                calculEp = ((monstre.getIntell())+(monstre.getSpeed())-(courier.getDurability()));
 
 
                 if (calculHp<0) {
@@ -122,8 +129,16 @@ public class Combat extends AppCompatActivity {
                 lifeEnemy = lifeEnemy - (calculHp);
                 heroLife = heroLife - (calculEp);
 
-                enemyLifeBar.setText(String.valueOf(lifeEnemy));
+                if (lifeEnemy < 0) {
 
+                }
+
+                if (heroLife < 0) {
+
+                }
+
+                heroLifeBar.setText(String.valueOf(heroLife));
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
                 // toast de résultats
                 LayoutInflater inflater = getLayoutInflater();
@@ -153,10 +168,10 @@ public class Combat extends AppCompatActivity {
             public void onClick(View view) {
 
                 int calculHp = 1;
-                calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
+                calculHp = ((((courier.getPower())+(courier.getIntelligence())+(courier.getForce())+20)-(monstre.getDur())));
 
                 int calculEp = 1;
-                calculEp = (((monstre.getPowr())+(monstre.getForce())-(courier.getDurability())));
+                calculEp = (((monstre.getPowr())+(monstre.getIntell())+(monstre.getForce()+20)-(courier.getDurability())));
 
 
                 if (calculHp<0) {
@@ -170,6 +185,15 @@ public class Combat extends AppCompatActivity {
                 lifeEnemy = lifeEnemy - (calculHp);
                 heroLife = heroLife - (calculEp);
 
+                if (lifeEnemy < 0) {
+
+                }
+
+                if (heroLife < 0) {
+
+                }
+
+                heroLifeBar.setText(String.valueOf(heroLife));
                 enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
 
