@@ -58,26 +58,38 @@ public class Combat extends AppCompatActivity {
                 int calculHp = 1;
                 calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
 
+                int calculEp = 1;
+                calculEp = (((monstre.getPowr())+(monstre.getForce())-(courier.getDurability())));
+
+
                 if (calculHp<0) {
                     calculHp=0;
                 }
 
-                lifeEnemy = lifeEnemy - (calculHp);
-
-                if (lifeEnemy<0){
-                    lifeEnemy = 0;
+                if (calculEp<0) {
+                    calculEp=0;
                 }
+
+                lifeEnemy = lifeEnemy - (calculHp);
+                heroLife = heroLife - (calculEp);
 
                 enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
+
+                // toast de résultats
                 LayoutInflater inflater = getLayoutInflater();
                 View layout = inflater.inflate(R.layout.activity_toast,
                         (ViewGroup) findViewById(R.id.toast_layout_root));
 
+                ImageView imageEnemy = (ImageView) layout.findViewById(R.id.image_enemy);
                 ImageView image = (ImageView) layout.findViewById(R.id.image);
-                Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(image);
                 TextView text = (TextView) layout.findViewById(R.id.text);
-                text.setText("Hello! This is a custom toast!");
+
+                image.setImageBitmap(courier.getImage());
+                Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
+
+
+                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
 
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
