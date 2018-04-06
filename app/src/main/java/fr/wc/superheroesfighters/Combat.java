@@ -104,22 +104,47 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int calculHe = 1;
-                calculHe = (((courier.getIntelligence())+(courier.getCombat())-(monstre.getIntell())));
+                int calculHp = 1;
+                calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
 
-                if (calculHe<0) {
-                    calculHe=0;
+                int calculEp = 1;
+                calculEp = (((monstre.getPowr())+(monstre.getForce())-(courier.getDurability())));
+
+
+                if (calculHp<0) {
+                    calculHp=0;
                 }
 
-                lifeEnemy = lifeEnemy - (calculHe);
-
-                if (lifeEnemy<0){
-                    lifeEnemy = 0;
+                if (calculEp<0) {
+                    calculEp=0;
                 }
+
+                lifeEnemy = lifeEnemy - (calculHp);
+                heroLife = heroLife - (calculEp);
 
                 enemyLifeBar.setText(String.valueOf(lifeEnemy));
 
-                Toast.makeText(Combat.this, "You made: " + calculHe, Toast.LENGTH_LONG).show();
+
+                // toast de résultats
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.activity_toast,
+                        (ViewGroup) findViewById(R.id.toast_layout_root));
+
+                ImageView imageEnemy = (ImageView) layout.findViewById(R.id.image_enemy);
+                ImageView image = (ImageView) layout.findViewById(R.id.image);
+                TextView text = (TextView) layout.findViewById(R.id.text);
+
+                image.setImageBitmap(courier.getImage());
+                Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
+
+
+                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
+                toast.show();
             }
         });
 
@@ -127,14 +152,47 @@ public class Combat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int calculHs = 1;
-                calculHs = (((courier.getCombat())+(courier.getForce())-(monstre.getDur())));
+                int calculHp = 1;
+                calculHp = (((courier.getPower())+(courier.getForce())-(monstre.getDur())));
 
-                if (calculHs<0) {
-                    calculHs=0;
+                int calculEp = 1;
+                calculEp = (((monstre.getPowr())+(monstre.getForce())-(courier.getDurability())));
 
-                    Toast.makeText(Combat.this, "You made: " + calculHs, Toast.LENGTH_LONG).show();
+
+                if (calculHp<0) {
+                    calculHp=0;
                 }
+
+                if (calculEp<0) {
+                    calculEp=0;
+                }
+
+                lifeEnemy = lifeEnemy - (calculHp);
+                heroLife = heroLife - (calculEp);
+
+                enemyLifeBar.setText(String.valueOf(lifeEnemy));
+
+
+                // toast de résultats
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.activity_toast,
+                        (ViewGroup) findViewById(R.id.toast_layout_root));
+
+                ImageView imageEnemy = (ImageView) layout.findViewById(R.id.image_enemy);
+                ImageView image = (ImageView) layout.findViewById(R.id.image);
+                TextView text = (TextView) layout.findViewById(R.id.text);
+
+                image.setImageBitmap(courier.getImage());
+                Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
+
+
+                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
+
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
+                toast.show();
             }
         });
     }
