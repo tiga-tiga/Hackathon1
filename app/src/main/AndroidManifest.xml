@@ -30,6 +30,9 @@
             android:name=".HeroCreation"
             android:screenOrientation="portrait"
             ></activity>
+
+        <activity android:name=".Winner" />
+        <activity android:name=".Loser"></activity>
     </application>
 
 </manifest>

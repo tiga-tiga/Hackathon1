@@ -359,4 +359,6 @@ public class HeroCreation extends AppCompatActivity {
         roundedBitmapDrawable.setCircular(true);
         avatar.setImageDrawable(roundedBitmapDrawable);
     }
-}
+
+
+    }

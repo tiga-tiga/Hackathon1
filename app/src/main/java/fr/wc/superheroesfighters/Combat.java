@@ -79,7 +79,7 @@ public class Combat extends AppCompatActivity {
                 }
 
                 if (heroLife < 0) {
-                    Intent loser = new Intent(Combat.this, Loser.this);
+                    //Intent loser = new Intent(Combat.this, Loser.this);
 
 
                 }
@@ -100,7 +100,7 @@ public class Combat extends AppCompatActivity {
                 Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
 
 
-                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
+                text.setText( "You deal " + calculHp + " damages to the enemy ! " + " \n " + "but you get " + calculEp + "damages");
 
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -157,7 +157,7 @@ public class Combat extends AppCompatActivity {
                 Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
 
 
-                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
+                text.setText( "You deal " + calculHp + " damages to the enemy ! " + " \n " + "but you get " + calculEp + "damages");
 
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -214,7 +214,7 @@ public class Combat extends AppCompatActivity {
                 Glide.with(Combat.this).load(monstre.getImageEnemy()) .into(imageEnemy);
 
 
-                text.setText( "You deal " + calculHp + " damages for the enemy ! " + " \n " + "but you get " + calculEp + "damages");
+                text.setText( "You deal " + calculHp + " damages to the enemy ! " + " \n " + "but you get " + calculEp + "damages");
 
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
