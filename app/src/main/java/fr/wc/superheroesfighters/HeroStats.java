@@ -1,5 +1,7 @@
 package fr.wc.superheroesfighters;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -16,9 +18,10 @@ public class HeroStats implements Parcelable {
     int combat;
     int speed;
     int power;
+    Bitmap image;
 
 
-    public HeroStats(String name, int force, int intelligence, int durability, int combat, int speed, int power) {
+    public HeroStats(String name, int force, int intelligence, int durability, int combat, int speed, int power, Bitmap image ) {
         this.name = name;
         this.force = force;
         this.intelligence = intelligence;
@@ -26,7 +29,31 @@ public class HeroStats implements Parcelable {
         this.combat = combat;
         this.speed = speed;
         this.power = power;
+        this.image = image;
     }
+
+    protected HeroStats(Parcel in) {
+        name = in.readString();
+        force = in.readInt();
+        intelligence = in.readInt();
+        durability = in.readInt();
+        combat = in.readInt();
+        speed = in.readInt();
+        power = in.readInt();
+        image = in.readParcelable(Bitmap.class.getClassLoader());
+    }
+
+    public static final Creator<HeroStats> CREATOR = new Creator<HeroStats>() {
+        @Override
+        public HeroStats createFromParcel(Parcel in) {
+            return new HeroStats(in);
+        }
+
+        @Override
+        public HeroStats[] newArray(int size) {
+            return new HeroStats[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -56,27 +83,14 @@ public class HeroStats implements Parcelable {
         return power;
     }
 
-    protected HeroStats(Parcel in) {
-        name = in.readString();
-        force = in.readInt();
-        intelligence = in.readInt();
-        durability = in.readInt();
-        combat = in.readInt();
-        speed = in.readInt();
-        power = in.readInt();
+    public Bitmap getImage() {
+        return image;
     }
 
-    public static final Creator<HeroStats> CREATOR = new Creator<HeroStats>() {
-        @Override
-        public HeroStats createFromParcel(Parcel in) {
-            return new HeroStats(in);
-        }
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
 
-        @Override
-        public HeroStats[] newArray(int size) {
-            return new HeroStats[size];
-        }
-    };
 
     @Override
     public int describeContents() {
@@ -84,13 +98,14 @@ public class HeroStats implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(name);
-        parcel.writeInt(force);
-        parcel.writeInt(intelligence);
-        parcel.writeInt(durability);
-        parcel.writeInt(combat);
-        parcel.writeInt(speed);
-        parcel.writeInt(power);
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(force);
+        dest.writeInt(intelligence);
+        dest.writeInt(durability);
+        dest.writeInt(combat);
+        dest.writeInt(speed);
+        dest.writeInt(power);
+        dest.writeParcelable(image, flags);
     }
 }
