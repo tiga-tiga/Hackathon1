@@ -21,12 +21,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/force_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-"/>
+            android:src="@drawable/ic_action_moins_noir"/>
 
         <TextView
             android:id="@+id/force"
@@ -37,12 +37,13 @@
             android:textSize="20sp"
             android:text="0"/>
 
-        <Button
+        <ImageView
             android:id="@+id/force_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+"/>
+            android:src="@drawable/ic_action_plus_red"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,10 +52,10 @@
 
         <ImageView
             android:id="@+id/avatar"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="40dp"
-            app:srcCompat="@android:drawable/ic_menu_camera"/>
+            app:srcCompat="@android:drawable/ic_menu_camera" />
 
     </LinearLayout>
 
@@ -64,12 +65,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/intell_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-"/>
+            android:src="@drawable/ic_action_moins_noir"/>
 
         <TextView
             android:id="@+id/intell"
@@ -80,12 +81,12 @@
             android:textSize="20sp"
             android:text="0"/>
 
-        <Button
+        <ImageView
             android:id="@+id/intell_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+"/>
+            android:src="@drawable/ic_action_plus_red"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,12 +100,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/durability_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-" />
+            android:src="@drawable/ic_action_moins_noir" />
 
         <TextView
             android:id="@+id/durability"
@@ -115,12 +116,12 @@
             android:textAlignment="center"
             android:textSize="20sp" />
 
-        <Button
+        <ImageView
             android:id="@+id/durability_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+" />
+            android:src="@drawable/ic_action_plus_red" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,12 +135,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/combat_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-"/>
+            android:src="@drawable/ic_action_moins_noir"/>
 
         <TextView
             android:id="@+id/combat"
@@ -150,12 +151,12 @@
             android:textSize="20sp"
             android:text="0"/>
 
-        <Button
+        <ImageView
             android:id="@+id/combat_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+"/>
+            android:src="@drawable/ic_action_plus_red"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -169,12 +170,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/speed_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-"/>
+            android:src="@drawable/ic_action_moins_noir"/>
 
         <TextView
             android:id="@+id/speed"
@@ -185,12 +186,12 @@
             android:textSize="20sp"
             android:text="0"/>
 
-        <Button
+        <ImageView
             android:id="@+id/speed_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+"/>
+            android:src="@drawable/ic_action_plus_red"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -204,12 +205,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageView
             android:id="@+id/power_moins"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-"/>
+            android:src="@drawable/ic_action_moins_noir"/>
 
         <TextView
             android:id="@+id/power"
@@ -220,12 +221,12 @@
             android:textSize="20sp"
             android:text="0"/>
 
-        <Button
+        <ImageView
             android:id="@+id/power_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+"/>
+            android:src="@drawable/ic_action_plus_red"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -255,11 +256,12 @@
 
     </LinearLayout>
 
-    <Button
+    <ImageView
         android:id="@+id/go_fight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fight !"
+        android:src="@drawable/fight"
+
         android:layout_marginTop="10dp"/>
 
 </LinearLayout>
