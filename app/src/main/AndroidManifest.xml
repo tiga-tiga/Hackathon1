@@ -11,16 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectEnemyActivity" />
-        <activity android:name=".Combat" />
-        <activity android:name=".HeroCreation"></activity>
+        <activity
+            android:name=".SelectEnemyActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Combat"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HeroCreation"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>
