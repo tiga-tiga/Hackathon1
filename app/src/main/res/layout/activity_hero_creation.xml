@@ -26,35 +26,35 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-" />
+            android:text="-"/>
 
         <TextView
             android:id="@+id/force"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="0"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:text="0"/>
 
         <Button
             android:id="@+id/force_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+" />
+            android:text="+"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Force" />
+            android:text="Force"/>
 
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="40dp"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            app:srcCompat="@android:drawable/ic_menu_camera"/>
 
     </LinearLayout>
 
@@ -69,23 +69,23 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="-" />
+            android:text="-"/>
 
         <TextView
             android:id="@+id/intell"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="0"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:text="0"/>
 
         <Button
             android:id="@+id/intell_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
-            android:text="+" />
+            android:text="+"/>
 
         <TextView
             android:layout_width="wrap_content"
