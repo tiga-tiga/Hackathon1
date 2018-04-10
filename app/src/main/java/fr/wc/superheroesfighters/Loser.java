@@ -3,6 +3,7 @@ package fr.wc.superheroesfighters;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ public class Loser extends AppCompatActivity {
         setContentView(R.layout.activity_loser);
 
         final ImageView winnner = findViewById(R.id.image_winnerl);
-        final TextView winnerName = findViewById(R.id.text_winnerl);
+
         final ImageView looserImg = findViewById(R.id.image_loserl);
 
 
@@ -26,8 +27,19 @@ public class Loser extends AppCompatActivity {
         HeroStats looser = getIntent().getExtras().getParcelable("LOOSER");
 
         Glide.with(Loser.this).load(winner.getImageEnemy()) .into(winnner);
-        winnerName.setText(winner.getNameEnemy());
+
         looserImg.setImageBitmap(looser.getImage());
+
+        ImageView replay = findViewById(R.id.image_restartL);
+        replay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Loser.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

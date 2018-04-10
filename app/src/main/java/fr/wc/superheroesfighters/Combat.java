@@ -56,8 +56,7 @@ public class Combat extends AppCompatActivity {
         final Intent loser = new Intent(Combat.this, Loser.class);
         final HeroStats stats = new HeroStats(courier.getName(), courier.getForce(), courier.getIntelligence(), courier.getDurability(), courier.getCombat(), courier.getSpeed(), courier.getPower(), courier.getImage());
         final SelectEnemyModel enemyF = new SelectEnemyModel(monstre.getImageEnemy(), monstre.getNameEnemy(),monstre.getIntell(),monstre.getForce(),monstre.getSpeed(),monstre.getDur(),monstre.getPowr(),monstre.getCmbt());
-        victoire.putExtra("FIN", stats);
-        victoire.putExtra("FINE", enemyF);
+
 
 
         heroPhyAttack.setOnClickListener(new View.OnClickListener() {
@@ -85,19 +84,18 @@ public class Combat extends AppCompatActivity {
 
                 if (lifeEnemy < 0) {
                     lifeEnemy = 0;
+                    victoire.putExtra("WINNER", stats);
+                    victoire.putExtra("LOOSER", enemyF);
                     startActivity(victoire);
 
                 }
 
                 if (heroLife < 0) {
                     heroLife = 0;
-                     Intent loser = new Intent(Combat.this, Loser.class);
+
                     loser.putExtra("LOOSER", stats);
                     loser.putExtra("WINNER", enemyF);
                     startActivity(loser);
-                }
-
-
                 }
 
                 heroLifeBar.setText(String.valueOf(heroLife));
@@ -150,11 +148,19 @@ public class Combat extends AppCompatActivity {
                 heroLife = heroLife - (calculEp);
 
                 if (lifeEnemy < 0) {
+                    lifeEnemy = 0;
+                    victoire.putExtra("WINNER", stats);
+                    victoire.putExtra("LOOSER", enemyF);
+                    startActivity(victoire);
 
                 }
 
                 if (heroLife < 0) {
+                    heroLife = 0;
 
+                    loser.putExtra("LOOSER", stats);
+                    loser.putExtra("WINNER", enemyF);
+                    startActivity(loser);
                 }
 
                 heroLifeBar.setText(String.valueOf(heroLife));
@@ -206,13 +212,20 @@ public class Combat extends AppCompatActivity {
                 heroLife = heroLife - (calculEp);
 
                 if (lifeEnemy < 0) {
+                    lifeEnemy = 0;
+                    victoire.putExtra("WINNER", stats);
+                    victoire.putExtra("LOOSER", enemyF);
+                    startActivity(victoire);
 
                 }
 
                 if (heroLife < 0) {
+                    heroLife = 0;
 
+                    loser.putExtra("LOOSER", stats);
+                    loser.putExtra("WINNER", enemyF);
+                    startActivity(loser);
                 }
-
                 heroLifeBar.setText(String.valueOf(heroLife));
                 enemyLifeBar.setText(String.valueOf(lifeEnemy));
 

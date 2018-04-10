@@ -26,11 +26,5 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this,HeroCreation.class));
             }
         });
-
-
-
-
-
-
     }
 }
